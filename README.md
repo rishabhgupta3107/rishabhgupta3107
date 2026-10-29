@@ -39,8 +39,8 @@ const rishabh = {
   <summary><h2>🎮 Play it now</h2></summary>
 
 <p>
-  <a href="https://github.com/rishabhgupta3107/igi-browser"><img width="400" alt="igi-browser" src="https://github-readme-stats.vercel.app/api/pin/?username=rishabhgupta3107&repo=igi-browser&theme=tokyonight&hide_border=true" /></a>
-  <a href="https://github.com/rishabhgupta3107/task-management-app"><img width="400" alt="HELM" src="https://github-readme-stats.vercel.app/api/pin/?username=rishabhgupta3107&repo=task-management-app&theme=tokyonight&hide_border=true" /></a>
+  <a href="https://github.com/rishabhgupta3107/igi-browser"><img width="400" alt="igi-browser" src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=rishabhgupta3107&repo=igi-browser&theme=tokyonight&hide_border=true" /></a>
+  <a href="https://github.com/rishabhgupta3107/task-management-app"><img width="400" alt="HELM" src="https://denvercoder1-github-readme-stats.vercel.app/api/pin/?username=rishabhgupta3107&repo=task-management-app&theme=tokyonight&hide_border=true" /></a>
 </p>
 
 - **[Project I.G.I. in your browser](https://github.com/rishabhgupta3107/igi-browser)** — *I'm Going In* (2000), translated from its Windows program to C and compiled to WebAssembly + WebGPU. No emulator. Widescreen, bloom, SSAO, controller support, bullet time. **[Play in browser](https://rishabhgupta3107.github.io/igi-browser/)** · [Mac / Windows apps](https://github.com/rishabhgupta3107/igi-browser/releases/latest)
@@ -113,8 +113,6 @@ Sunday      59 commits    ██████░░░░░░░░░░░░
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/rishabhgupta3107/rishabhgupta3107/output/github-snake-dark.svg">
   <img alt="Contribution snake" src="https://raw.githubusercontent.com/rishabhgupta3107/rishabhgupta3107/output/github-snake.svg">
 </picture>
-
-![Contribution graph](https://github-readme-activity-graph.vercel.app/graph?username=rishabhgupta3107&theme=tokyo-night&hide_border=true&area=true)
 
 <p align="center">
   <img alt="Streak" src="https://streak-stats.demolab.com?user=rishabhgupta3107&theme=tokyonight&hide_border=true" />
