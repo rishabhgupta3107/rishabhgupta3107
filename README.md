@@ -67,45 +67,59 @@ Source stays closed for now; public versions ship as they're ready.
 </details>
 
 <details open>
+  <summary><h2>🛠️ Recently active</h2></summary>
+
+<!--RECENT:START-->
+| Repo | What it is | Lang | Last push |
+|---|---|---|---|
+| [igi-browser](https://github.com/rishabhgupta3107/igi-browser) | Play Project I.G.I.: I'm Going In (2000) in a web browser, or as an app on a Mac or a… |  | yesterday |
+| [task-management-app](https://github.com/rishabhgupta3107/task-management-app) | HELM is a keyboard-first "task terminal" — the speed of Linear, the glanceable density of… | `Java` | 42 days ago |
+
+<sub>🔥 74 commits in the last 30 days · 🔒 +7 private repos active</sub>
+<!--RECENT:END-->
+
+</details>
+
+<details open>
   <summary><h2>📊 By the numbers</h2></summary>
 
 Across every repo I own, public and private, recounted daily.
 
 <!--LANGS:START-->
 ```text
-TypeScript  ███████████░░░░░░░░░░░░░░   44.6 %
-Python      ██████░░░░░░░░░░░░░░░░░░░   25.2 %
-C           ███░░░░░░░░░░░░░░░░░░░░░░   13.9 %
-JavaScript  ██░░░░░░░░░░░░░░░░░░░░░░░    6.7 %
-CSS         █░░░░░░░░░░░░░░░░░░░░░░░░    3.7 %
-Java        █░░░░░░░░░░░░░░░░░░░░░░░░    2.4 %
-HTML        █░░░░░░░░░░░░░░░░░░░░░░░░    2.2 %
-Shell       ░░░░░░░░░░░░░░░░░░░░░░░░░    0.8 %
-Other       ░░░░░░░░░░░░░░░░░░░░░░░░░    0.5 %
+TypeScript  ██████████░░░░░░░░░░░░░░░   39.3 %
+Python      ██████░░░░░░░░░░░░░░░░░░░   23.6 %
+C           ███░░░░░░░░░░░░░░░░░░░░░░   12.3 %
+C#          ███░░░░░░░░░░░░░░░░░░░░░░   10.0 %
+JavaScript  █░░░░░░░░░░░░░░░░░░░░░░░░    5.9 %
+CSS         █░░░░░░░░░░░░░░░░░░░░░░░░    3.2 %
+Java        █░░░░░░░░░░░░░░░░░░░░░░░░    2.1 %
+HTML        ░░░░░░░░░░░░░░░░░░░░░░░░░    1.9 %
+Other       ░░░░░░░░░░░░░░░░░░░░░░░░░    1.6 %
 ```
-<sub>14 repos · updated 2026-10-30</sub>
+<sub>13 repos · updated 2026-10-31</sub>
 <!--LANGS:END-->
 
 <!--COMMITS:START-->
-**I'm a night 🦉** · 257 commits
+**I'm a night 🦉** · 261 commits
 
 ```text
-🌞 Morning   11 commits    █░░░░░░░░░░░░░░░░░░░░░░░░    4.3 %
-🌆 Daytime   68 commits    ███████░░░░░░░░░░░░░░░░░░   26.5 %
-🌃 Evening   148 commits   ██████████████░░░░░░░░░░░   57.6 %
-🌙 Night     30 commits    ███░░░░░░░░░░░░░░░░░░░░░░   11.7 %
+🌞 Morning   13 commits    █░░░░░░░░░░░░░░░░░░░░░░░░    5.0 %
+🌆 Daytime   70 commits    ███████░░░░░░░░░░░░░░░░░░   26.8 %
+🌃 Evening   146 commits   ██████████████░░░░░░░░░░░   55.9 %
+🌙 Night     32 commits    ███░░░░░░░░░░░░░░░░░░░░░░   12.3 %
 ```
 
 📅 **I'm most productive on Sunday**
 
 ```text
-Monday      37 commits    ████░░░░░░░░░░░░░░░░░░░░░   14.4 %
-Tuesday     29 commits    ███░░░░░░░░░░░░░░░░░░░░░░   11.3 %
-Wednesday   12 commits    █░░░░░░░░░░░░░░░░░░░░░░░░    4.7 %
-Thursday    53 commits    █████░░░░░░░░░░░░░░░░░░░░   20.6 %
-Friday      34 commits    ███░░░░░░░░░░░░░░░░░░░░░░   13.2 %
-Saturday    33 commits    ███░░░░░░░░░░░░░░░░░░░░░░   12.8 %
-Sunday      59 commits    ██████░░░░░░░░░░░░░░░░░░░   23.0 %
+Monday      37 commits    ████░░░░░░░░░░░░░░░░░░░░░   14.2 %
+Tuesday     29 commits    ███░░░░░░░░░░░░░░░░░░░░░░   11.1 %
+Wednesday   12 commits    █░░░░░░░░░░░░░░░░░░░░░░░░    4.6 %
+Thursday    51 commits    █████░░░░░░░░░░░░░░░░░░░░   19.5 %
+Friday      34 commits    ███░░░░░░░░░░░░░░░░░░░░░░   13.0 %
+Saturday    39 commits    ████░░░░░░░░░░░░░░░░░░░░░   14.9 %
+Sunday      59 commits    ██████░░░░░░░░░░░░░░░░░░░   22.6 %
 ```
 <!--COMMITS:END-->
 

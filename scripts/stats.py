@@ -2,6 +2,7 @@
 """Rewrite the stats blocks in README.md from every repo the token's owner has, private ones included.
 
 LANGS: share of code per language. COMMITS: your commits by time of day and by weekday, across all branches.
+RECENT: your most recently pushed public repos, plus how many private ones were active lately.
 Only totals leave the private repos: never repo names, messages or code.
 Needs GH_TOKEN: a token that can read all your repos (fine-grained: All repositories, Metadata + Contents: read).
 TZ sets the time zone the commit hours are counted in (default Asia/Kolkata).
@@ -16,6 +17,8 @@ from zoneinfo import ZoneInfo
 
 TOP = 8
 WIDTH = 25
+RECENT = 5
+ACTIVE_DAYS = 30
 IGNORE = {"Dockerfile", "Makefile", "Procfile", "Batchfile"}
 README = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "README.md")
 TZ = ZoneInfo(os.environ.get("TZ") or "Asia/Kolkata")
@@ -58,14 +61,45 @@ def replace(text, marker, block):
     return re.sub(pattern, lambda m: m.group(1) + block + m.group(2), text, flags=re.S)
 
 
+def ago(when, now):
+    days = (now - when).days
+    return "today" if days < 1 else "yesterday" if days < 2 else f"{days} days ago"
+
+
+def recent_block(public, private_active, recent_commits, now):
+    rows = []
+    for repo in sorted(public, key=lambda r: r["pushed_at"], reverse=True)[:RECENT]:
+        desc = (repo["description"] or "").replace("|", "\\|").strip()
+        if len(desc) > 90:
+            desc = desc[:90].rsplit(" ", 1)[0].rstrip(".,;:—-") + "…"
+        lang = f"`{repo['language']}`" if repo["language"] else ""
+        rows.append(f"| [{repo['name']}]({repo['html_url']}) | {desc} | {lang} | {ago(parse(repo['pushed_at']), now)} |")
+    out = "| Repo | What it is | Lang | Last push |\n|---|---|---|---|\n" + "\n".join(rows) + "\n\n"
+    extra = [f"🔥 {recent_commits} commits in the last {ACTIVE_DAYS} days"]
+    if private_active:
+        extra.append(f"🔒 +{private_active} private repo{'s' * (private_active != 1)} active")
+    return out + "<sub>" + " · ".join(extra) + "</sub>\n"
+
+
+def parse(stamp):
+    return datetime.datetime.fromisoformat(stamp.replace("Z", "+00:00"))
+
+
 def main():
     me, _ = get("https://api.github.com/user")
     login = me["login"]
+    now = datetime.datetime.now(datetime.timezone.utc)
+    cutoff = now - datetime.timedelta(days=ACTIVE_DAYS)
     langs, shas, count = {}, {}, 0
+    public, private_active = [], 0
     for repo in pages("https://api.github.com/user/repos?affiliation=owner&per_page=100"):
         if repo["fork"] or repo["name"] == login:
             continue
         count += 1
+        if not repo["private"]:
+            public.append(repo)
+        elif repo["pushed_at"] and parse(repo["pushed_at"]) >= cutoff:
+            private_active += 1
         sizes, _ = get(repo["languages_url"])
         for lang, size in sizes.items():
             if lang not in IGNORE:
@@ -88,7 +122,7 @@ def main():
     lang_block = (bars([(n, s, "") for n, s in rows], sum(langs.values()), max(len(n) for n, _ in rows))
                   + f"<sub>{count} repos · updated {today}</sub>\n")
 
-    times = [datetime.datetime.fromisoformat(d.replace("Z", "+00:00")).astimezone(TZ) for d in shas.values()]
+    times = [parse(d).astimezone(TZ) for d in shas.values()]
     total = len(times)
     by_period = [(name, sum(lo <= t.hour < hi for t in times)) for name, lo, hi in PERIODS]
     by_day = [(day, sum(t.weekday() == i for t in times)) for i, day in enumerate(DAYS)]
@@ -105,6 +139,8 @@ def main():
         text = f.read()
     text = replace(text, "LANGS", lang_block)
     text = replace(text, "COMMITS", commit_block)
+    recent_commits = sum(parse(d) >= cutoff for d in shas.values())
+    text = replace(text, "RECENT", recent_block(public, private_active, recent_commits, now))
     with open(README, "w", encoding="utf-8") as f:
         f.write(text)
     print(lang_block + "\n" + commit_block)

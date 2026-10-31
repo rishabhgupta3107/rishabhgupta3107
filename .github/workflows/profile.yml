@@ -1,5 +1,5 @@
 # Keeps the profile README's live sections fresh, once a day and on demand (Actions tab > Run workflow).
-#   langs: recounts languages and commit times across all repos, private included. Needs the LANGS_TOKEN secret:
+#   langs: recounts languages and commit times across all repos, private included, and lists recently pushed public repos. Needs the LANGS_TOKEN secret:
 #          a fine-grained token with access to All repositories, Metadata + Contents: read (nothing else).
 #   snake: draws the contribution graph as a snake on the `output` branch, which the README shows.
 name: profile
